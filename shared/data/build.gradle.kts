@@ -17,26 +17,21 @@ kotlin {
         iosSimulatorArm64()
     ).forEach { iosTarget ->
         iosTarget.binaries.framework {
-            baseName = "Shared"
+            baseName = "Data"
             isStatic = true
         }
     }
     
     sourceSets {
         commonMain.dependencies {
-            api(project(":shared:domain"))
-            api(project(":shared:data"))
-            api(project(":shared:ui-model"))
-            implementation(libs.koin.core)
-        }
-        commonTest.dependencies {
-            implementation(libs.kotlin.test)
+            implementation(project(":shared:domain"))
+            implementation(project(":shared:network"))
         }
     }
 }
 
 android {
-    namespace = "com.example.kmpchatproject.shared"
+    namespace = "com.example.kmpchatproject.data"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11

@@ -1,4 +1,4 @@
-package com.example.kmpchatproject
+package com.example.kmpchatproject.core
 
 import android.os.Build
 

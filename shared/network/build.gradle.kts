@@ -17,26 +17,21 @@ kotlin {
         iosSimulatorArm64()
     ).forEach { iosTarget ->
         iosTarget.binaries.framework {
-            baseName = "Shared"
+            baseName = "Network"
             isStatic = true
         }
     }
     
     sourceSets {
         commonMain.dependencies {
-            api(project(":shared:domain"))
-            api(project(":shared:data"))
-            api(project(":shared:ui-model"))
-            implementation(libs.koin.core)
-        }
-        commonTest.dependencies {
-            implementation(libs.kotlin.test)
+            implementation(project(":shared:core"))
+            // Ktorなどの通信ライブラリをここに追加する予定
         }
     }
 }
 
 android {
-    namespace = "com.example.kmpchatproject.shared"
+    namespace = "com.example.kmpchatproject.network"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
