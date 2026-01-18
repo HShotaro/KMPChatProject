@@ -1,3 +1,55 @@
+gitignore
+# --- Kotlin Multiplatform / Gradle ---
+.gradle/
+build/
+*/build/
+.kotlin/
+
+# --- Android ---
+*.ap_
+*.apk
+*.dex
+local.properties
+.externalNativeBuild
+.cxx/
+capture/
+output.json
+
+# --- IntelliJ IDEA / Android Studio ---
+.idea/
+*.iml
+*.iws
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/shelf/
+.idea/dictionaries
+.idea/libraries/
+# プロジェクト共有の設定（コードスタイルなど）を残したい場合は以下をコメントアウト
+# !.idea/codeStyles/
+# !.idea/iconloader.xml
+
+# --- iOS (Kotlin Multiplatform Mobile) ---
+# Xcodeのビルド生成物
+.DS_Store
+iosApp/iosApp.xcworkspace/xcuserdata/
+iosApp/iosApp.xcodeproj/project.xcworkspace/
+iosApp/iosApp.xcodeproj/xcuserdata/
+iosApp/DerivedData/
+iosApp/Build/
+iosApp/Index/
+
+# CocoaPods を使用している場合
+iosApp/Pods/
+.bundle/
+
+# --- macOS / OS X ---
+.DS_Store
+
+# --- KMP Specific ---
+# Kotlin/Native が生成する外部ライブラリのキャッシュなど
+.konan/
+
+
 # Compiled class file
 *.class
 
